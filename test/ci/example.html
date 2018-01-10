@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<title>Child context test(s)</title>
+<head>
+  <script type="text/javascript" src="testharness.js"></script>
+  <script type="text/javascript" src="testharnessreport.js"></script>
+  <link rel="stylesheet" href="testharness.css">
+</head>
+<body>
+  <div id="log"></div>
+  <script>
+    test(function(t) {
+      assert_true(true, "true is true");
+    }, "Simple test");
+
+    async_test(function(t) {
+      document.addEventListener("DOMContentLoaded", function() {
+      t.step(function() {
+        assert_true(true, "bubbles should be true");
+      });
+      t.done();
+  });
+}, "DOMContentLoaded");
+  </script>
+</body>
+</html>

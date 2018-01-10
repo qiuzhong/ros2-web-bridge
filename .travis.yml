@@ -12,5 +12,10 @@ before_install:
   - sudo docker pull ubuntu:xenial
   - sudo docker build -t rcldocker .
 
+before_script:
+  - sudo apt-get install google-chrome-stable
+  - sudo apt-get install libxtst6
+
 script:
-  - sudo docker run -v $(pwd):/root/ros2-web-bridge --rm rcldocker bash -i -c 'cd /root/ros2-web-bridge && npm install --unsafe-perm && npm run lint'
+  - sudo docker run -v $(pwd):/root/ros2-web-bridge --rm rcldocker bash -i -c 'cd /root/ros2-web-bridge && npm install --unsafe-perm && npm run ci example.html'
+

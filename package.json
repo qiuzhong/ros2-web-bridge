@@ -14,7 +14,8 @@
   },
   "scripts": {
     "test": "mocha",
-    "lint": "eslint --max-warnings=0 index.js lib examples test"
+    "lint": "eslint --max-warnings=0 index.js lib examples test",
+    "ci": "node test/ci/index.js"
   },
   "license": "Apache-2.0",
   "repository": {
@@ -36,6 +37,9 @@
     "debug": "^3.1.0",
     "rclnodejs": "^0.x",
     "ws": "^3.3.2",
-    "uuid":"^3.1.0"
+    "uuid": "^3.1.0",
+    "http-server": "^0.10.0",
+    "jsdom": "^11.5.1",
+    "puppeteer": "^0.13.0"
   }
 }

@@ -16,6 +16,7 @@ before_script:
   - sudo apt-get install google-chrome-stable
   - sudo apt-get install libxtst6
   - sudo apt-get install libxtst6:i386
+  - sudo apt-get install libxext6
   - sudo updatedb
   - locate libXtst
 

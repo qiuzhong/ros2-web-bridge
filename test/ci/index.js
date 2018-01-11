@@ -2,10 +2,10 @@ const puppeteer = require('puppeteer');
 const jsdom = require('jsdom');
 const child = require('child_process');
 
-var server = child.fork(`${__dirname}/server.js`);
+var server = child.fork(`${__dirname}/server.js`, {cwd: `${__dirname}`});
 
 (async (html) => {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({args: ['--no-sandbox']});
     const page = await browser.newPage();
     await page.setViewport({width: 1280, height: 960});
     await page.goto('http://127.0.0.1:8080/' + html, {waitUntil: 'load'});

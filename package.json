@@ -15,6 +15,7 @@
   "scripts": {
     "test": "mocha",
     "lint": "eslint --max-warnings=0 index.js lib examples test",
+    "server": "http-server test/ci",
     "ci": "node test/ci/index.js",
     "checkdeps": "ldd node_modules/puppeteer/.local-chromium/linux-515411/chrome-linux/chrome"
   },
